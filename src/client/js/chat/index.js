@@ -15,6 +15,26 @@ let chat = {
     $menuLeft.animate({ left: '-100%'}, 800)
   }
 }
+
+function agregarMsj(ev) {
+	ev.preventDefault()
+
+	let text = $value.val(),
+		$clone = $item.clone()
+
+	console.log(text)
+
+	$clone.find('.message-container .text')
+		.text(text)
+
+	$container.append($clone)
+	
+}
+
+
+$send.click( agregarMsj );
+
+
 export default chat
 
 //const $chatLeftMenu = $('#chat-leftMenu')
